@@ -2,9 +2,6 @@ package cis.itcompany;
 
 import javax.persistence.*;
 
-/**
- * Created by Yarik on 27.05.2015.
- */
 @Entity
 @Table(name = "company", schema = "public", catalog = "Database4")
 public class DBDriverCompanyEntity {

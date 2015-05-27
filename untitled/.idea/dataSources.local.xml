@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - CISDatabase@localhost" uuid="326b306d-258f-4208-b1eb-4e18985311c1">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+    </data-source>
+    <data-source name="PostgreSQL - CISDatabase@localhost" uuid="51f8f916-d89f-47ab-96b8-13e3a38e4e82">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>CISDatabase.pg_catalog CISDatabase.public</schema-pattern>
+      <default-schemas>CISDatabase.pg_catalog CISDatabase.public</default-schemas>
+    </data-source>
+  </component>
+</project>
