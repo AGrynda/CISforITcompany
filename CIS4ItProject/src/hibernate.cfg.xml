@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/Database4</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <mapping class="cis.itcompany.DBDriverAttachmentEntity"/>
+    <mapping class="cis.itcompany.DBDriverCashflowEntity"/>
+    <mapping class="cis.itcompany.DBDriverCashflowtypeEntity"/>
+    <mapping class="cis.itcompany.DBDriverCompanyEntity"/>
+    <mapping class="cis.itcompany.DBDriverCustomerEntity"/>
+    <mapping class="cis.itcompany.DBDriverDepartmentEntity"/>
+    <mapping class="cis.itcompany.DBDriverEmployeeEntity"/>
+    <mapping class="cis.itcompany.DBDriverEmployeetypeEntity"/>
+    <mapping class="cis.itcompany.DBDriverEquipmentEntity"/>
+    <mapping class="cis.itcompany.DBDriverEquipmenttypeEntity"/>
+    <mapping class="cis.itcompany.DBDriverMailingEntity"/>
+    <mapping class="cis.itcompany.DBDriverMeetingEntity"/>
+    <mapping class="cis.itcompany.DBDriverOfficeEntity"/>
+    <mapping class="cis.itcompany.DBDriverProjectEntity"/>
+    <mapping class="cis.itcompany.EmployeeMailing"/>
+    <mapping class="cis.itcompany.EmployeeMeeting"/>
+    <mapping class="cis.itcompany.EmployeeProject"/>
+    <mapping class="cis.itcompany.DBDriverSalaryEntity"/>
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

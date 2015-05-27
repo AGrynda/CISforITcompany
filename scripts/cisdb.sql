@@ -4,124 +4,10 @@
 /*==============================================================*/
 
 
-drop index R_11_FK;
-
-drop index ATTACHMENT_PK;
-
-drop table Attachment;
-
-drop index R_19_FK;
-
-drop index R_18_FK;
-
-drop index CASHFLOW_PK;
-
-drop table Cashflow;
-
-drop index CASHFLOWTYPE_PK;
-
-drop table CashflowType;
-
-drop index COMPANY_PK;
-
-drop table Company;
-
-drop index CUSTOMER_PK;
-
-drop table Customer;
-
-drop index R_6_FK;
-
-drop index DEPARTMENT_PK;
-
-drop table Department;
-
-drop index R_5_FK;
-
-drop index R_4_FK;
-
-drop index EMPLOYEE_PK;
-
-drop table Employee;
-
-drop index EMPLOYEETYPE_PK;
-
-drop table EmployeeType;
-
-drop index R_10_FK;
-
-drop index R_8_FK;
-
-drop index EQUIPMENT_PK;
-
-drop table Equipment;
-
-drop index EQUIPMENTTYPE_PK;
-
-drop table EquipmentType;
-
-drop index MAILING_PK;
-
-drop table Mailing;
-
-drop index MEETING_PK;
-
-drop table Meeting;
-
-drop index R_9_FK;
-
-drop index OFFICE_PK;
-
-drop table Office;
-
-drop index R_14_FK;
-
-drop index R_13_FK;
-
-drop index PROJECT_PK;
-
-drop table Project;
-
-drop index R_12_FK2;
-
-drop index R_12_FK;
-
-drop table R_12;
-
-drop index R_15_FK2;
-
-drop index R_15_FK;
-
-drop table R_15;
-
-drop index R_7_FK2;
-
-drop index R_7_FK;
-
-drop table R_7;
-
-drop index R_20_FK;
-
-drop index SALARY_PK;
-
-drop table Salary;
-
-drop domain "<default>";
-
-drop domain "<root>";
-
-drop domain Blob;
-
-drop domain Datetime;
-
-drop domain Number;
-
-drop domain String;
 
 /*==============================================================*/
 /* Domain: "<default>"                                          */
 /*==============================================================*/
-create domain "<default>" as CHAR(18);
 
 /*==============================================================*/
 /* Domain: "<root>"                                             */
@@ -129,32 +15,29 @@ create domain "<default>" as CHAR(18);
 create domain "<root>" as CHAR(18);
 
 /*==============================================================*/
-/* Domain: Blob                                                 */
+/* Domain: CHAR(18)                                                 */
 /*==============================================================*/
-create domain Blob as CHAR;
+
 
 /*==============================================================*/
-/* Domain: Datetime                                             */
+/* Domain: Date                                             */
 /*==============================================================*/
-create domain Datetime as DATE;
 
 /*==============================================================*/
-/* Domain: Number                                               */
+/* Domain: Integer                                               */
 /*==============================================================*/
-create domain Number as INT4;
 
 /*==============================================================*/
-/* Domain: String                                               */
+/* Domain: CHAR(18)                                               */
 /*==============================================================*/
-create domain String as VARCHAR(20);
 
 /*==============================================================*/
 /* Table: Attachment                                            */
 /*==============================================================*/
 create table Attachment (
-   AttachmentId         "<default>"          not null,
-   MailingId            "<default>"          not null,
-   Content              Blob                 null,
+   AttachmentId         Integer          not null,
+   MailingId            Integer          not null,
+   Content              CHAR(18)                 null,
    constraint PK_ATTACHMENT primary key (AttachmentId)
 );
 
@@ -176,12 +59,12 @@ MailingId
 /* Table: Cashflow                                              */
 /*==============================================================*/
 create table Cashflow (
-   CashflowId           "<default>"          not null,
-   CompanyId            "<default>"          not null,
-   CashflowTypeId       "<default>"          not null,
-   Comment              String               null,
-   OperationDate        Datetime             null,
-   Amount               Number               null,
+   CashflowId           Integer          not null,
+   CompanyId            Integer          not null,
+   CashflowTypeId       Integer          not null,
+   Comment              CHAR(18)               null,
+   OperationDate        Date             null,
+   Amount               Integer               null,
    constraint PK_CASHFLOW primary key (CashflowId)
 );
 
@@ -210,8 +93,8 @@ CashflowTypeId
 /* Table: CashflowType                                          */
 /*==============================================================*/
 create table CashflowType (
-   CashflowTypeId       "<default>"          not null,
-   CashflowTypeName     String               null,
+   CashflowTypeId       Integer          not null,
+   CashflowTypeName     CHAR(18)               null,
    constraint PK_CASHFLOWTYPE primary key (CashflowTypeId)
 );
 
@@ -226,10 +109,10 @@ CashflowTypeId
 /* Table: Company                                               */
 /*==============================================================*/
 create table Company (
-   CompanyId            "<default>"          not null,
-   Name                 String               null,
-   Logo                 Blob                 null,
-   CurrentBudget        Number               null,
+   CompanyId            Integer          not null,
+   Name                 CHAR(18)               null,
+   Logo                 CHAR(18)                 null,
+   CurrentBudget        Integer               null,
    constraint PK_COMPANY primary key (CompanyId)
 );
 
@@ -244,8 +127,8 @@ CompanyId
 /* Table: Customer                                              */
 /*==============================================================*/
 create table Customer (
-   CustomerId           "<default>"          not null,
-   Name                 String               null,
+   CustomerId           Integer          not null,
+   Name                 CHAR(18)               null,
    constraint PK_CUSTOMER primary key (CustomerId)
 );
 
@@ -260,9 +143,9 @@ CustomerId
 /* Table: Department                                            */
 /*==============================================================*/
 create table Department (
-   DepartmentId         "<default>"          not null,
-   CompanyId            "<default>"          not null,
-   Name                 String               null,
+   DepartmentId         Integer          not null,
+   CompanyId            Integer          not null,
+   Name                 CHAR(18)               null,
    constraint PK_DEPARTMENT primary key (DepartmentId)
 );
 
@@ -284,12 +167,12 @@ CompanyId
 /* Table: Employee                                              */
 /*==============================================================*/
 create table Employee (
-   EmployeeId           "<default>"          not null,
-   DepartmentId         "<default>"          not null,
-   EmployeeTypeId       "<default>"          not null,
-   BirthDate            String               null,
-   LastName             "<default>"          null,
-   FirstName            "<default>"          null,
+   EmployeeId           Integer          not null,
+   DepartmentId         Integer          not null,
+   EmployeeTypeId       Integer          not null,
+   BirthDate            CHAR(18)               null,
+   LastName             CHAR(18)          null,
+   FirstName            CHAR(18)          null,
    constraint PK_EMPLOYEE primary key (EmployeeId)
 );
 
@@ -318,8 +201,8 @@ EmployeeTypeId
 /* Table: EmployeeType                                          */
 /*==============================================================*/
 create table EmployeeType (
-   EmployeeTypeId       "<default>"          not null,
-   TypeName             String               null,
+   EmployeeTypeId       Integer          not null,
+   TypeName             CHAR(18)               null,
    constraint PK_EMPLOYEETYPE primary key (EmployeeTypeId)
 );
 
@@ -334,10 +217,10 @@ EmployeeTypeId
 /* Table: Equipment                                             */
 /*==============================================================*/
 create table Equipment (
-   EquipmentId          "<default>"          not null,
-   EquipmentTypeId      "<default>"          not null,
-   OfficeId             "<default>"          not null,
-   Quantity             Number               null,
+   EquipmentId          Integer          not null,
+   EquipmentTypeId      Integer          not null,
+   OfficeId             Integer          not null,
+   Quantity             Integer               null,
    constraint PK_EQUIPMENT primary key (EquipmentId)
 );
 
@@ -366,8 +249,8 @@ OfficeId
 /* Table: EquipmentType                                         */
 /*==============================================================*/
 create table EquipmentType (
-   EquipmentTypeId      "<default>"          not null,
-   EquipmentTypeName    String               null,
+   EquipmentTypeId      Integer          not null,
+   EquipmentTypeName    CHAR(18)               null,
    constraint PK_EQUIPMENTTYPE primary key (EquipmentTypeId)
 );
 
@@ -382,8 +265,8 @@ EquipmentTypeId
 /* Table: Mailing                                               */
 /*==============================================================*/
 create table Mailing (
-   MailingId            "<default>"          not null,
-   Text                 String               null,
+   MailingId            Integer         not null,
+   Text                 CHAR(18)               null,
    constraint PK_MAILING primary key (MailingId)
 );
 
@@ -398,9 +281,9 @@ MailingId
 /* Table: Meeting                                               */
 /*==============================================================*/
 create table Meeting (
-   MeetingId            "<default>"          not null,
-   Topic                String               null,
-   Organizator          "<default>"          null,
+   MeetingId            Integer          not null,
+   Topic                CHAR(18)               null,
+   OrganizatorId          Integer          null,
    constraint PK_MEETING primary key (MeetingId)
 );
 
@@ -415,9 +298,9 @@ MeetingId
 /* Table: Office                                                */
 /*==============================================================*/
 create table Office (
-   OfficeId             "<default>"          not null,
-   CompanyId            "<default>"          not null,
-   Adress               String               null,
+   OfficeId             Integer          not null,
+   CompanyId            Integer          not null,
+   Adress               CHAR(18)               null,
    constraint PK_OFFICE primary key (OfficeId)
 );
 
@@ -439,13 +322,13 @@ CompanyId
 /* Table: Project                                               */
 /*==============================================================*/
 create table Project (
-   ProjectId            "<default>"          not null,
-   CompanyId            "<default>"          not null,
-   CustomerId           "<default>"          not null,
-   Name                 String               null,
-   DateStart            Datetime             null,
-   Deadline             Datetime             null,
-   Price                "<default>"          null,
+   ProjectId            Integer          not null,
+   CompanyId            Integer          not null,
+   CustomerId           Integer          not null,
+   Name                 CHAR(18)               null,
+   DateStart            Date             null,
+   Deadline             Date             null,
+   Price                Integer          null,
    constraint PK_PROJECT primary key (ProjectId)
 );
 
@@ -474,8 +357,8 @@ CompanyId
 /* Table: R_12                                                  */
 /*==============================================================*/
 create table R_12 (
-   MailingId            "<default>"          not null,
-   EmployeeId           "<default>"          not null
+   MailingId            Integer          not null,
+   EmployeeId           Integer          not null
 );
 
 /*==============================================================*/
@@ -496,8 +379,8 @@ EmployeeId
 /* Table: R_15                                                  */
 /*==============================================================*/
 create table R_15 (
-   EmployeeId           "<default>"          not null,
-   MeetingId            "<default>"          not null
+   EmployeeId           Integer         not null,
+   MeetingId            Integer          not null
 );
 
 /*==============================================================*/
@@ -518,8 +401,8 @@ MeetingId
 /* Table: R_7                                                   */
 /*==============================================================*/
 create table R_7 (
-   ProjectId            "<default>"          not null,
-   EmployeeId           "<default>"          not null
+   ProjectId            Integer          not null,
+   EmployeeId           Integer          not null
 );
 
 /*==============================================================*/
@@ -540,11 +423,11 @@ EmployeeId
 /* Table: Salary                                                */
 /*==============================================================*/
 create table Salary (
-   SalaryId             "<default>"          not null,
-   EmployeeId           "<default>"          not null,
-   Amount               Number               null,
-   StartDate            Datetime             null,
-   EndDate              Datetime             null,
+   SalaryId             Integer          not null,
+   EmployeeId           Integer          not null,
+   Amount               Integer               null,
+   StartDate            Date             null,
+   EndDate              Date             null,
    constraint PK_SALARY primary key (SalaryId)
 );
 
