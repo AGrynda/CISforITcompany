@@ -5,7 +5,7 @@
 <hibernate-configuration>
   <session-factory>
     <property name="connection.url">jdbc:postgresql://localhost:5432/Database4</property>
-    <property name="connection.driver_class"><org class="postgresql Driver"></org></property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
     <mapping class="cis.itcompany.DBDriverAttachmentEntity"/>
     <mapping class="cis.itcompany.DBDriverCashflowEntity"/>
     <mapping class="cis.itcompany.DBDriverCashflowtypeEntity"/>

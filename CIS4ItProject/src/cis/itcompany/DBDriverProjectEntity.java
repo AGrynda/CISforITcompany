@@ -15,10 +15,13 @@ public class DBDriverProjectEntity {
     private Date deadline;
     private Integer price;
 
+    public static final String nameInDB = "project";
+
     public DBDriverCompanyEntity companyEntity;
     public DBDriverCustomerEntity customerEntity;
 
     public DBDriverEmployeeEntity[] employees;
+
 
     @Id
     @Column(name = "projectid")
